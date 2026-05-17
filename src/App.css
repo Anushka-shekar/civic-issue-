@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #eef3f8;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(10, 25, 47, 0.65),
+      rgba(10, 25, 47, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1974&auto=format&fit=crop")
+      center/cover no-repeat;
+  padding: 40px 20px;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* MAIN LAYOUT */
+
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+
+.left-panel {
+  width: 280px;
+  color: white;
+  padding: 30px 20px;
+}
+
+.left-panel h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.feature-box {
+  margin-top: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.feature-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORM CONTAINER */
+
+.form-section {
+  flex: 1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* FORM */
+
+.issue-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.issue-form input,
+.issue-form textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.issue-form textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.issue-form input::placeholder,
+.issue-form textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.issue-form input:focus,
+.issue-form textarea:focus {
+  border: 1px solid #4da3ff;
+  background: rgba(255,255,255,0.12);
+}
+
+/* FILE */
+
+.file-upload {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 14px;
+  color: white;
+}
+
+/* BUTTON */
+
+.submit-btn {
+  background: linear-gradient(90deg, #1da1f2, #2563eb);
+  border: none;
+  color: white;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* ISSUES SECTION */
+
+.issues-section {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.section-title {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.issue-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-5px);
+}
+
+.issue-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.issue-content {
+  padding: 18px;
+}
+
+.issue-content h3 {
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.issue-content p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.status {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.progress {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2.8rem;
+  }
+}
+/* =========================
+   ISSUE GRID
+========================= */
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* =========================
+   ISSUE CARD
+========================= */
+
+.issue-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-wrapper {
+  position: relative;
+}
+
+.issue-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+/* =========================
+   STATUS BADGE
+========================= */
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.pending {
+  background: #ff6b6b;
+}
+
+.progress {
+  background: #f59e0b;
+}
+
+.resolved {
+  background: #22c55e;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.issue-content {
+  padding: 20px;
+}
+
+.issue-content h3 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   META ROW
+========================= */
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.issue-description {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CATEGORY */
+
+.category-pill {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* SELECT */
+
+.card-footer select {
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: white;
+}
