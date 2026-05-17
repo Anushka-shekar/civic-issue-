@@ -19,19 +19,20 @@ app.use(express.json());
 // ==========================
 const complaintLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 HOURS
-  max: 8,
+  max: 10,
   message: {
     success: false,
-    message: "Maximum 8 complaints allowed per day"
+    message: "Maximum 10 complaints allowed per day"
   },
   standardHeaders: true,
   legacyHeaders: false
 });
 
 // ==========================
-// MONGODB CONNECTION
-// ==========================
+// MONGODB CONNECTIONmongodb+srv://anushkashekar239_db_user:<db_password>@civicissuetracker.qkg2nxu.mongodb.net/?appName=CivicIssueTracker
+// mongodb+srv://anushkashekar239_db_user:<db_password>@civicissuetracker.qkg2nxu.mongodb.net/
 mongoose.connect("mongodb://jocoy62429_db_user:Anu12345@ac-d7nv5eq-shard-00-00.zevxl5a.mongodb.net:27017,ac-d7nv5eq-shard-00-01.zevxl5a.mongodb.net:27017,ac-d7nv5eq-shard-00-02.zevxl5a.mongodb.net:27017/issuesDB?ssl=true&replicaSet=atlas-oyua4q-shard-0&authSource=admin&retryWrites=true&w=majority")
+//mongoose.connect("mongodb+srv://anushkashekar239_db_user:Ganesha1210@civicissuetracker.qkg2nxu.mongodb.net/?appName=CivicIssueTracker&retryWrites=true&w=majority")
 .then(() => console.log("✅ MongoDB Connected"))
 .catch(err => console.log("❌ DB Error:", err));
 
